@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❤️ Hélio e Aury ❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #f8f8f8;
+      font-family: 'Scarlet', sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      padding: 20px;
+     
+   
+      overflow-x: hidden;
+      border: 2px solid #ff6b81; /* Borda decorativa */
+      border-radius: 15px; /* Bordas arredondadas */
+      box-shadow: 0 0 20px rgba(255, 107, 129, 0.5); /* Sombra suave */
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .title h1 {
+      font-size: 2.8rem;
+      color: #ff6b81;
+      font-family: 'Cupid', cursive;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+    }
+
+    .title h2 {
+      font-size: 1.6rem;
+      color: #f8f8f8;
+      margin-top: 5px;
+      font-weight: 400;
+    }
+
+    .counter {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 15px rgba(255, 107, 129, 0.3); /* Sombra suave */
+    }
+
+    .counter h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .counter span {
+      display: block;
+      font-size: 1.4rem;
+      margin: 6px 0;
+      font-weight: 300;
+    }
+
+    p {
+      margin-bottom: 25px;
+      text-align: justify;
+      font-weight: 300;
+      padding: 10px;
+      background-color: rgba(255, 107, 129, 0.1); /* Fundo suave */
+      border-radius: 10px; /* Bordas arredondadas */
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff6b81;
+      font-size: 20px;
+      animation: floatUp 7s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.6); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+
+    /* Estilos do Carrossel */
+    .carousel {
+      position: relative;
+      width: 35%;
+      margin: 1% auto; /* Define margens automáticas nas laterais para centralizar */
+      overflow: hidden;
+     
+      transition: transform 1.3s ease, box-shadow 1.3s ease;
+}
+
+    .carousel:hover {
+      transform: scale(1.02);
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 1s ease-in-out;
+      height: 100%;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto; /* Mantém a proporção da imagem */
+      display: block; /* Remove espaços extras ao redor da imagem */
+      object-fit: cover;
+      flex-shrink: 0;
+           filter: brightness(0.9);
+      transition: filter 5.9s ease;
+    }
+
+      /* Estilos para os tópicos */
+    .topic {
+      margin: 40px 0;
+    }
+
+    .topic h3 {
+      font-size: 1.4rem;
+      color: #ff6b81;
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Cupid', cursive;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+    }
+
+    .topic p {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: rgba(255, 107, 129, 0.1); /* Fundo suave */
+      border-radius: 10px; /* Bordas arredondadas */
+    }
+
+    .topic-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    /* Importação das fontes personalizadas */
+    @font-face {
+      font-family: 'Cupid';
+      src: url('caminho-para-cupid.woff2') format('woff2'),
+           url('caminho-para-cupid.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Scarlet';
+      src: url('caminho-para-scarlet.woff2') format('woff2'),
+           url('caminho-para-scarlet.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">
+    <h1>❤️ Hélio e Aury ❤️</h1>
+    <h2>Nossa História</h2>
+  </div>
+
+  <p>
+    Toda história de amor tem um início e, com o tempo, é marcada por momentos que nos fazem se 
+    apaixonar cada dia mais. O amor se constrói nos detalhes, nos olhares que dizem tudo, 
+    as risadas compartilhadas e nos gestos simples que se tornam inesquecíveis.
+
+No começo, é a novidade que encanta; depois, é a companhia que conforta e o cuidado que 
+fortalece. Amar é escolher estar junto, mesmo nos dias difíceis, é rir das pequenas coisas e 
+fazer dos momentos simples os mais especiais.
+
+No fim, o que importa são as memórias criadas, os planos sonhados e a certeza de que, 
+com a pessoa certa, cada dia é um novo motivo para amar ainda mais.
+</p>
+
+  <!-- Tópicos com Carrosséis -->
+  <div class="topic-row">
+    <div class="topic">
+      <h3>Nossa primeira vez/viagem juntos</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0101.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0102.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0103.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0106.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0105.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0107.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0108.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0109.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0110.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0111.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0112.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0113.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0114.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0115.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0116.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0117.jpeg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0118.jpeg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\01parati 1x\0104.jpg" alt="Foto 1">
+        </div>
+      </div>
+      <p>Nosso primeiro contato, primeiro beijo, primeira noite juntos... 
+        Algo que ninguém esperava simplesmente aconteceu. Em meio a um lugar paradisíaco, 
+        a paisagem mais bela era você. Desde o primeiro momento, nossa conexão foi tão intensa 
+        que parecia que nos conhecíamos há muito tempo. Ali nasceu um sentimento que, com o tempo, 
+        se transformou no que é hoje: amor por completo.</p>
+    </div>
+
+    <div class="topic">
+      <h3>O tão esperado show do Maneva</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\02show do Maneva\0201.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\02show do Maneva\0202.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\02show do Maneva\0203.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\02show do Maneva\0204.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\02show do Maneva\0205.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\02show do Maneva\0206.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\02show do Maneva\0207.png" alt="Foto 1">
+          
+          
+        </div>
+      </div>
+      <p>A realização de um sonho no dia do meu aniversário. Foi uma noite muito especial 
+        em que eu precisava ter alguém especial ao meu lado. Um dos melhores momentos que 
+        vivemos e que irei guardar para sempre.</p>
+    </div>
+  </div>
+
+  <div class="topic-row">
+    <div class="topic">
+      <h3>A frienta Pedra da Macela</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\03Pedra da Macela\0301.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\03Pedra da Macela\0302.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\03Pedra da Macela\0304.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\03Pedra da Macela\0305.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\03Pedra da Macela\0303.png" alt="Foto 1">
+          
+        </div>
+      </div>
+      <p>Nossa segunda viagem juntos. Apesar dos muitos obstáculos, 
+        foi uma experiência repleta de amor. Nem a chuva, nem o frio, 
+        nem a lama conseguiram atrapalhar a nossa sintonia, que contagiava todos ao nosso redor.</p>
+    </div>
+
+    <div class="topic">
+      <h3>Momentos mágicos na Praia de Santos</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\04Praia de Santos\0401.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\04Praia de Santos\0402.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\04Praia de Santos\0403.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\04Praia de Santos\0404.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\04Praia de Santos\0405.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\04Praia de Santos\0406.png" alt="Foto 1">
+          
+          
+        </div>
+      </div>
+      <p>O amor fluía como as ondas do mar. A vontade de estarmos juntos falava mais alto, 
+        e o sentimento dentro do peito parecia querer transbordar. Apesar de não ser uma das 
+        viagens mais lembradas, foi ali que tivemos mais intimidade e afeto um pelo outro.</p>
+    </div>
+  </div>
+
+  <div class="topic-row">
+    <div class="topic">
+      <h3>A incrível viagem para Angra dos Reis</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0501.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0503.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0504.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0505.jpg" alt="Foto 1">
+            <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0502.png" alt="Foto 1">
+            <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0506.png" alt="Foto 1">
+            <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0508.png" alt="Foto 1">
+            <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0509.png" alt="Foto 1">
+            <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0510.png" alt="Foto 1">
+            <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0511.png" alt="Foto 1">
+            <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\05Angra dos Reis\0507.webp" alt="Foto 1">
+  
+        </div>
+      </div>
+      <p>Essa viagem ficou gravada em nossos corações e mentes. Tudo era perfeito: as praias, 
+        o quarto, o café da manhã e o passeio de barco. Ali nos mostramos como um verdadeiro casal, 
+        mais uma vez encantando as pessoas com o nosso jeito de ser. Foi marcada por beijos, sorrisos, lágrimas e muita diversão.</p>
+    </div>
+
+    <div class="topic">
+      <h3>Voltando ao paraíso de Paraty</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0601.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0602.png" alt="Foto 2">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0603.jpg" alt="Foto 3">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0604.jpg" alt="Foto 4">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0605.jpg" alt="Foto 5">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0606.webp" alt="Foto 6">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0607.webp" alt="Foto 7">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0608.png" alt="Foto 8">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0609.png" alt="Foto 9">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0610.png" alt="Foto 10">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0611.png" alt="Foto 11">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0612.png" alt="Foto 12">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0613.png" alt="Foto 13">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0614.png" alt="Foto 14">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\06Paraty 2x\0615.png" alt="Foto 15">
+        </div>
+      </div>
+      <p>Quando a gente se apaixona, a gente volta. Essa frase descreve perfeitamente esse lugar 
+        e o que sentimos. Onde tudo começou, desta vez tivemos mais tempo e exploramos novas praias. 
+        Achei que não superaria a primeira experiência, mas foi tão gostosa e apaixonante quanto. 
+        Nossa liberdade nessa viagem proporcionou uma experiência diferente e ainda mais intensa.</p>
+    </div>
+  </div>
+
+  <div class="topic-row">
+    <div class="topic">
+      <h3>Aventuras nas cachoeiras de Brotas</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\07Brotas\0701.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\07Brotas\0703.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\07Brotas\0702.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\07Brotas\0704.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\07Brotas\0705.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\07Brotas\0706.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\07Brotas\0707.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\07Brotas\0708.png" alt="Foto 1">
+
+        </div>
+      </div>
+      <p>Fugindo da rotina, nos aventuramos para relembrar as viagens passadas. 
+        Nossa primeira viagem de moto foi cheia de paisagens incríveis, comidas deliciosas 
+        e momentos inesquecíveis. Aproveitamos a cachoeira da melhor forma possível, e a 
+        aparição de um bichinho fofo nos fez rir por semanas. Acho que nunca vamos esquecer desse dia.
+            </div>
+
+    <div class="topic">
+      <h3>O sonho nas alturas</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\08balao\0801.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\08balao\0802.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\08balao\0803.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\08balao\0804.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\08balao\0805.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\08balao\0806.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\08balao\0807.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\08balao\0808.jpg" alt="Foto 1">
+          
+        </div>
+      </div>
+      <p>Realizar o seu sonho de andar de balão foi um dos meus sonhos realizados. 
+        Toda a admiração e amor que sinto por você me levam a querer te fazer feliz, 
+        realizar as suas vontades e mostrar, com ações, o quanto o meu amor é verdadeiro e puro.</p>
+    </div>
+  </div>
+
+  <div class="topic-row">
+    <div class="topic">
+      <h3>Bruninho no Brasil</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\09Bruninho\0901.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\09Bruninho\0902.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\09Bruninho\0903.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\09Bruninho\0904.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\09Bruninho\0905.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\09Bruninho\0906.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\09Bruninho\0907.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\09Bruninho\0908.jpeg" alt="Foto 1">
+        </div>
+      </div>
+      <p>Nunca imaginei ter a oportunidade de ir a um show de um dos maiores artistas que influenciaram minha 
+        vida musical. Cresci ouvindo suas músicas, e viver essa experiência da maneira que foi. Me emocionando
+         com você e por você, foi indescritível. Aquela noite, aquelas músicas... 
+         senti como se tivesse alcançado o auge dos meus sentimentos e da felicidade.</p>
+    </div>
+
+    <div class="topic">
+      <h3>Roles em outras cidades</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1001.jpeg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1002.jpeg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1003.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1004.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1005.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1006.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1007.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1008.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1009.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1010.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1011.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1012.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1013.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1014.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1015.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1016.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1017.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1018.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1019.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\10Roles em outras cidades\1020.webp" alt="Foto 1">  
+        </div>
+      </div>
+      <p>Temos inúmeros momentos aleatórios em várias cidades, e uma das coisas que mais amo em nós é a capacidade
+         de transformar qualquer situação, boa ou ruim, em uma lembrança divertida, leve e cheia de paixão.</p>
+    </div>
+  </div>
+
+  <div class="topic-row">
+    <div class="topic">
+      <h3>Cozinhando e transando</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1101.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1102.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1103.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1104.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1105.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1106.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1107.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1108.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1109.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1110.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1111.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1112.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1113.png" alt="Foto 1"> 
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1114.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1115.jpg" alt="Foto 1">
+
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1116.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1117.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1118.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1119.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1120.jpeg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\11Cozinhando\1121.jpg" alt="Foto 1">
+
+        </div>
+      </div>
+      <p>Meu amor por cozinhar se juntou ao seu amor por comer, e essa foi uma das melhores combinações que já vivemos.
+         Não sei explicar como nossos gostos, vontades e momentos na cozinha se encaixam tão perfeitamente.
+          Só sei que isso não pode acabar, porque alimenta não só a nossa fome, mas também a nossa paixão.</p>
+    </div>
+
+    <div class="topic">
+      <h3>Momentos especiais e aleatórios</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1201.jpeg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1202.jpeg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1203.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1204.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1205.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1206.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1207.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1208.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1209.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1210.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1211.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1212.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1213.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\12Momentos especiais\1214.jpg" alt="Foto 1">
+
+        </div>
+      </div>
+      <p>Nossos momentos especiais e aleatórios são como pequenos tesouros que encontramos no caminho, sem planejar,
+         mas que carregam um significado imenso. Só sei que esses instantes, por mais simples que sejam, são os que 
+         mais guardo no coração, porque transformam o ordinário em extraordinário.</p>
+    </div>
+
+    <div class="topic">
+      <h3>Vivendo juntos, engordando juntos</h3>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1301.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1302.jpg" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1303.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1304.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1305.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1306.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1307.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1308.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1309.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1310.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1311.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1312.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1313.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1314.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1315.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1316.png" alt="Foto 1">
+          <img src="C:\Users\suporte2\Desktop\Helio\Docs\Pessoal\hea\fotos\13delicias\1317.webp" alt="Foto 1">
+
+
+        </div>
+      </div>
+      <p>Cada refeição é uma celebração do nosso amor. Não sei explicar como uma pizza à meia-noite ou um café da manhã simples, 
+        podem ser tão especiais quando compartilhados com você. Só sei que cada garfada, cada gole, é um momento de cumplicidade 
+        que nos une ainda mais. E se a balança reclama, o coração agradece, porque é juntos que a vida fica mais saborosa.
+      </p>
+    </div>
+  </div>
+
+  <p>
+    Esta página estará sempre ativa e constantemente atualizada para que possamos relembrar os 
+    momentos que vivemos, reviver essa nostalgia apaixonante e nos inspirar a construir um futuro ainda mais perfeito juntos  
+  </p>
+
+  <!-- Adicione mais tópicos conforme necessário -->
+
+  <div class="hearts" id="hearts"></div>
+
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="spotidownloader.com - Tennessee Whiskey - Chris Stapleton.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Contador no final da página -->
+  <div class="counter">
+    <h2>Oficialmente juntos desde 15/12/23</h2>
+    <span id="timeTogether"></span>
+  </div>
+
+  <script>
+    // Função para passar as imagens automaticamente
+    function startCarousel(carousel) {
+      const carouselInner = carousel.querySelector('.carousel-inner');
+      const slides = carouselInner.querySelectorAll('img');
+      let currentSlide = 0;
+
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }, 1500); // Intervalo de 1,5 segundos
+    }
+
+    // Iniciar todos os carrosséis
+    document.querySelectorAll('.carousel').forEach(startCarousel);
+
+    // Funções para os corações
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 15 + 20) + 'px';
+      document.getElementById('hearts').appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    setInterval(createHeart, 350);
+
+    // Função para o contador
+    function updateCounter() {
+      const startDate = new Date('2023-12-15T00:00:00');
+      const now = new Date();
+      const diff = now - startDate;
+
+      const seconds = Math.floor(diff / 1000) % 60;
+      const minutes = Math.floor(diff / (1000 * 60)) % 60;
+      const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+      const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      const years = Math.floor(totalDays / 365.25);
+      const months = Math.floor((totalDays % 365.25) / 30.44);
+      const days = Math.floor((totalDays % 365.25) % 30.44);
+
+      const timeTogether = `${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+      document.getElementById('timeTogether').innerText = timeTogether;
+    }
+
+    setInterval(updateCounter, 1000);
+
+    // Iniciar música e contador
+    window.onload = () => {
+      const music = document.getElementById('backgroundMusic');
+      music.play().catch(() => {
+        document.body.addEventListener('click', () => music.play(), { once: true });
+      });
+      updateCounter();
+    };
+  </script>
+</body>
+</html>
